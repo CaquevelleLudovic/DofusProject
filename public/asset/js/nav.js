@@ -1,0 +1,7 @@
+const nav = 
+{
+    init: function ()
+    {
+        
+    }
+}
