@@ -39,4 +39,3 @@
 </div>
 
 @include('footer')
-<iframe width="410" height="260" src="https://www.youtube.com/embed/JAhil1C--8w" title="La Pièce d&#39;Ecaflip – DOFUS" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>

@@ -45,7 +45,7 @@ const slider =
             imageElement.classList.add("slider__img");
 
             // on modifie son attribut src
-            imageElement.src = "http://localhost:8000/asset/img/position/cra/" + image;
+            imageElement.src = "../asset/img/position/cra/" + image;
             imageElement.alt = "Image Cra";
 
             // on ajoute ce nouvel au DOM

@@ -45,7 +45,7 @@ const slider =
             imageElement.classList.add("slider__img");
 
             // on modifie son attribut src
-            imageElement.src = "http://localhost:8000/asset/img/position/ecaflip/" + image;
+            imageElement.src = "../asset/img/position/ecaflip/" + image;
             imageElement.alt = "Image ecaflip";
 
             // on ajoute ce nouvel au DOM
