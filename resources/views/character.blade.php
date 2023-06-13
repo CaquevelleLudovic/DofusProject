@@ -4,7 +4,9 @@
 <div class="mainContent">
 
   <div class="card mainContentLeft content-size">
+    <div class="characName">
     <h2 class="card-header para-h2-main"><?= collect($characterId)->pluck('title')->first()?></h2>
+    </div>
       <div class="card-body">
         <h5 class="card-title para-h5-main"><?= collect($characterId)->pluck('subtitle')->first()?></h5>
         <p class="card-text para-p-main"><?= collect($characterId)->pluck('content')->first()?></p>
@@ -28,6 +30,7 @@
 
     <div class="sexCharacter">
       <i class="fa-solid fa-mars"></i>
+      <p> | </p>
       <i class="fa-solid fa-venus"></i>
     </div>
   </div>

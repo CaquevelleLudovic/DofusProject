@@ -13,20 +13,48 @@ const slider =
         'position-7-ecaflipM.png',
     ],
 
+    sliderPositionF: [
+        'position-0-ecaflipF.png',   // position 0
+        'position-1-ecaflipF.png',   // position 1
+        'position-2-ecaflipF.png',   // position 2
+        'position-3-ecaflipF.png',   // position 3
+        'position-4-ecaflipF.png',
+        'position-5-ecaflipF.png',
+        'position-6-ecaflipF.png',
+        'position-7-ecaflipF.png',
+    ],
+
     init: function()
     {
         // dès l'initialisation, on charge les images
         slider.loadSliderImages();
 
-        // et on affiche la première image
+        // ... et on affiche la première image
         slider.displaySlide();
 
+        // Fonction qui change le style de la page
+        slider.stylePage();
+
+        // On selectionne les boutons Suivant et précédent
         const btnLeft = document.querySelector(".boutonLeft") ;
         const btnRight = document.querySelector(".boutonRight") ;
 
+        // ... et on leur met des écouteur d'évenement
         btnLeft.addEventListener("click", slider.previousSlide) ;
         btnRight.addEventListener("click", slider.nextSlide) ;
 
+    },
+
+    stylePage: function()
+    {
+        const BackgroundTitle = document.querySelector(".characName")
+        BackgroundTitle.style.background = "#0B3936"
+
+        const backgroundContent = document.querySelector(".mainContentLeft")
+        backgroundContent.style.background = "#0b393661"
+
+        const backgroundSex = document.querySelector(".sexCharacter")
+        backgroundSex.style.background = "rgb(11 57 54 / 49%)"
     },
 
     // une fonction qui charge toutes les images dans le slider !
@@ -34,6 +62,7 @@ const slider =
     {
         // on récupère la section qui a la classe "character"
         const sliderElement = document.querySelector(".character");
+
 
         // on parcourt le tableau sliderPosition
         for(const image of slider.sliderPosition) {
