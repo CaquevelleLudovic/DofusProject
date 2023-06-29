@@ -1,6 +1,6 @@
 const slider =
 {
-    currentPosition: 0,
+    currentPosition: 1,
 
     sliderPosition: [
         'position-0-ecaflipM.png',   // position 0
@@ -51,10 +51,10 @@ const slider =
         BackgroundTitle.style.background = "#0B3936"
 
         const backgroundContent = document.querySelector(".mainContentLeft")
-        backgroundContent.style.background = "#0b393661"
+        backgroundContent.style.background = "rgb(10 10 10 / 35%)"
 
         const backgroundSex = document.querySelector(".sexCharacter")
-        backgroundSex.style.background = "rgb(11 57 54 / 49%)"
+        backgroundSex.style.background = "rgb(10 10 10 / 35%)"
     },
 
     // une fonction qui charge toutes les images dans le slider !
