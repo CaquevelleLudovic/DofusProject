@@ -1,6 +1,6 @@
 const slider =
 {
-    currentPosition: 1,
+    currentPosition: 0,
 
     sliderPosition: [
         'position-0-ecaflipM.png',   // position 0
@@ -58,29 +58,54 @@ const slider =
     },
 
     // une fonction qui charge toutes les images dans le slider !
-    loadSliderImages: function()
-    {
-        // on récupère la section qui a la classe "character"
+    loadSliderImages: function() {
         const sliderElement = document.querySelector(".character");
+        const sliderF = document.querySelector(".fa-venus");
+        const sliderM = document.querySelector(".fa-mars");
 
-
-        // on parcourt le tableau sliderPosition
-        for(const image of slider.sliderPosition) {
-
-            // on créé un nouvel élément image avec createElement
+        function addImagesToSlider(imageList) {
+          for (const image of imageList) {
             let imageElement = document.createElement('img');
-
-            // on lui ajoute la classe "slider__img"
             imageElement.classList.add("slider__img");
-
-            // on modifie son attribut src
             imageElement.src = "../asset/img/position/ecaflip/" + image;
             imageElement.alt = "Image ecaflip";
-
-            // on ajoute ce nouvel au DOM
             sliderElement.appendChild(imageElement);
+          }
         }
-    },
+
+        // Ajouter les images initiales
+        addImagesToSlider(slider.sliderPosition);
+
+        sliderF.addEventListener("click", function() {
+          const imgSlider = document.querySelectorAll(".slider__img");
+
+          // Supprimer toutes les images actuellement affichées
+          imgSlider.forEach(function(imgSlider) {
+            imgSlider.remove();
+          });
+            addImagesToSlider(slider.sliderPositionF);
+          const imgCurrent = document.querySelector(".slider__img");
+            if (imgCurrent) {
+                imgCurrent.classList.add("slider__img--current");
+            }
+            slider.displaySlide();
+        });
+
+        sliderM.addEventListener("click", function() {
+            const imgSlider = document.querySelectorAll(".slider__img");
+            // Supprimer toutes les images actuellement affichées
+            imgSlider.forEach(function(imgSlider) {
+              imgSlider.remove();
+
+            });
+              addImagesToSlider(slider.sliderPosition);
+              const imgCurrent = document.querySelector(".slider__img");
+            if (imgCurrent) {
+                imgCurrent.classList.add("slider__img--current");
+            }
+            slider.displaySlide();
+          });
+      },
 
     // affiche l'image précédente dans le slider
     previousSlide: function()
