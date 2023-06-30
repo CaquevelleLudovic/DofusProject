@@ -102,7 +102,7 @@ const slider =
             }
             slider.displaySlide();
             });
-    },
+        },
 
     // affiche l'image précédente dans le slider
     previousSlide: function()
