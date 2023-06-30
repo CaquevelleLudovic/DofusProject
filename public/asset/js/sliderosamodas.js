@@ -45,7 +45,7 @@ const slider =
     stylePage: function()
     {
         const BackgroundTitle = document.querySelector(".characName")
-        BackgroundTitle.style.background = "#05312d"
+        BackgroundTitle.style.background = "#3a1a07"
 
         const backgroundContent = document.querySelector(".mainContentLeft")
         backgroundContent.style.background = "rgb(10 10 10 / 35%)"
