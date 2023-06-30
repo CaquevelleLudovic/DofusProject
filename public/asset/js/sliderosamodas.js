@@ -13,6 +13,17 @@ const slider =
         'position-7-osamodasM.png',
     ],
 
+    sliderPositionF: [
+        'position-0-osamodasF.png',   // position 0
+        'position-1-osamodasF.png',   // position 1
+        'position-2-osamodasF.png',   // position 2
+        'position-3-osamodasF.png',   // position 3
+        'position-4-osamodasF.png',
+        'position-5-osamodasF.png',
+        'position-6-osamodasF.png',
+        'position-7-osamodasF.png',
+    ],
+
     init: function()
     {
         // dès l'initialisation, on charge les images
