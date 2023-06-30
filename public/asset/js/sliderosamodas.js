@@ -35,7 +35,7 @@ const slider =
         slider.stylePage();
 
         const btnLeft = document.querySelector(".boutonLeft") ;
-        const btnRight = document.querySelector(".boutonRight") ;
+        const btnRight = document.querySelector(".boutonRight") 
 
         btnLeft.addEventListener("click", slider.previousSlide) ;
         btnRight.addEventListener("click", slider.nextSlide) ;
@@ -44,14 +44,14 @@ const slider =
 
     stylePage: function()
     {
-        const BackgroundTitle = document.querySelector(".characName")
-        BackgroundTitle.style.background = "#3a1a07"
+        const BackgroundTitle = document.querySelector(".characName");
+        BackgroundTitle.style.background = "#05312d";
 
-        const backgroundContent = document.querySelector(".mainContentLeft")
-        backgroundContent.style.background = "rgb(10 10 10 / 35%)"
+        const backgroundContent = document.querySelector(".mainContentLeft");
+        backgroundContent.style.background = "rgb(10 10 10 / 35%)";
 
-        const backgroundSex = document.querySelector(".sexCharacter")
-        backgroundSex.style.background = "rgb(10 10 10 / 35%)"
+        const backgroundSex = document.querySelector(".sexCharacter");
+        backgroundSex.style.background = "rgb(10 10 10 / 35%)";
     },
 
     // une fonction qui charge toutes les images dans le slider !
