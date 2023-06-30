@@ -13,6 +13,17 @@ const slider =
         'position-7-eliotropeM.png',
     ],
 
+    sliderPositionF: [
+        'position-0-eliotropeF.png',   // position 0
+        'position-1-eliotropeF.png',   // position 1
+        'position-2-eliotropeF.png',   // position 2
+        'position-3-eliotropeF.png',   // position 3
+        'position-4-eliotropeF.png',
+        'position-5-eliotropeF.png',
+        'position-6-eliotropeF.png',
+        'position-7-eliotropeF.png',
+    ],
+
     init: function()
     {
         // dès l'initialisation, on charge les images
@@ -20,6 +31,8 @@ const slider =
 
         // et on affiche la première image
         slider.displaySlide();
+
+        slider.stylePage();
 
         const btnLeft = document.querySelector(".boutonLeft") ;
         const btnRight = document.querySelector(".boutonRight") ;
@@ -29,28 +42,69 @@ const slider =
 
     },
 
-    // une fonction qui charge toutes les images dans le slider !
-    loadSliderImages: function()
+    stylePage: function()
     {
-        // on récupère la section qui a la classe "character"
+        const positionBackground = document.getElementById('Main')
+        positionBackground.style.backgroundPosition = "50% 30%"
+
+        const BackgroundTitle = document.querySelector(".characName")
+        BackgroundTitle.style.background = "#006f88"
+
+        const backgroundContent = document.querySelector(".mainContentLeft")
+        backgroundContent.style.background = "rgb(10 10 10 / 35%)"
+
+        const backgroundSex = document.querySelector(".sexCharacter")
+        backgroundSex.style.background = "rgb(10 10 10 / 35%)"
+    },
+
+    // une fonction qui charge toutes les images dans le slider !
+    loadSliderImages: function() {
         const sliderElement = document.querySelector(".character");
+        const sliderF = document.querySelector(".fa-venus");
+        const sliderM = document.querySelector(".fa-mars");
 
-        // on parcourt le tableau sliderPosition
-        for(const image of slider.sliderPosition) {
-
-            // on créé un nouvel élément image avec createElement
+        function addImagesToSlider(imageList) {
+            for (const image of imageList) {
             let imageElement = document.createElement('img');
-
-            // on lui ajoute la classe "slider__img"
             imageElement.classList.add("slider__img");
-
-            // on modifie son attribut src
             imageElement.src = "../asset/img/position/eliotrope/" + image;
-            imageElement.alt = "Image eliotrope";
-
-            // on ajoute ce nouvel au DOM
+            imageElement.alt = "Image ecaflip";
             sliderElement.appendChild(imageElement);
+            }
         }
+
+        // Ajouter les images initiales
+        addImagesToSlider(slider.sliderPosition);
+
+        sliderF.addEventListener("click", function() {
+            const imgSlider = document.querySelectorAll(".slider__img");
+
+            // Supprimer toutes les images actuellement affichées
+            imgSlider.forEach(function(imgSlider) {
+            imgSlider.remove();
+            });
+            addImagesToSlider(slider.sliderPositionF);
+            const imgCurrent = document.querySelector(".slider__img");
+            if (imgCurrent) {
+                imgCurrent.classList.add("slider__img--current");
+            }
+            slider.displaySlide();
+            });
+
+        sliderM.addEventListener("click", function() {
+            const imgSlider = document.querySelectorAll(".slider__img");
+            // Supprimer toutes les images actuellement affichées
+            imgSlider.forEach(function(imgSlider) {
+                imgSlider.remove();
+            });
+
+            addImagesToSlider(slider.sliderPosition);
+            const imgCurrent = document.querySelector(".slider__img");
+            if (imgCurrent) {
+                imgCurrent.classList.add("slider__img--current");
+            }
+            slider.displaySlide();
+            });
     },
 
     // affiche l'image précédente dans le slider
