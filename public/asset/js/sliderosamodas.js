@@ -21,7 +21,7 @@ const slider =
         'position-4-osamodasF.png',
         'position-5-osamodasF.png',
         'position-6-osamodasF.png',
-        'position-7-osamodasF.png',
+        'position-7-osamodasF.png'
     ],
 
     init: function()
@@ -44,7 +44,7 @@ const slider =
 
     stylePage: function()
     {
-        const BackgroundTitle = document.querySelector(".characName");
+        const BackgroundTitle = document.querySelector(".characName")
         BackgroundTitle.style.background = "#05312d";
 
         const backgroundContent = document.querySelector(".mainContentLeft");
